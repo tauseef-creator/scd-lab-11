@@ -8,7 +8,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sh 'git clone https://github.com/tauseef-creator/scd-lab-11'
+            script {
+                sh '''
+                if [ ! -d "newDirectory" ]; then
+                    git clone https://github.com/tauseef-creator/scd-lab-11 newDirectory
+                fi
+                '''
+                }
             }
         }
 
