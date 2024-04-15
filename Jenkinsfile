@@ -30,26 +30,27 @@ pipeline {
             }
         }
 
-        // stage('Push Docker Image') {
-        //     steps {
-        //         script {
-        //             docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-        //                 docker.image(env.DOCKER_IMAGE).push('latest')
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    // docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+                    //     docker.image(env.DOCKER_IMAGE).push('latest')
+                    // }
+                    sh "echo hello"
+                }
+            }
+        }
     }
 
-    post {
-        always {
-            echo 'This will always run'
-        }
-        success {
-            echo 'This will run only if successful'
-        }
-        failure {
-            echo 'This will run only if failed'
-        }
-    }
+    // post {
+    //     always {
+    //         echo 'This will always run'
+    //     }
+    //     success {
+    //         echo 'This will run only if successful'
+    //     }
+    //     failure {
+    //         echo 'This will run only if failed'
+    //     }
+    // }
 }
