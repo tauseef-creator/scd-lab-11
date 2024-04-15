@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/tauseef-creator/scd-lab-11'
+                sh 'git clone https://github.com/tauseef-creator/scd-lab-11'
             }
         }
 
